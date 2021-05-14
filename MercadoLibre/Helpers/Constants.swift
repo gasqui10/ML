@@ -10,4 +10,6 @@ struct Constants {
     static let url = "https://api.mercadolibre.com/sites/MLA/search?q="
     static let storyBoardIDResultsV = "resultsData"
     static let cell = "cell"
+    static let thirdStoryBoard = "ToDetailsViewController"
+    static let currency = "$"
 }

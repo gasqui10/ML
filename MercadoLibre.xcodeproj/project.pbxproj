@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		303E6A06F92F05C56FED31EB /* Pods_MercadoLibre.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FB9052351CAFA676A157C847 /* Pods_MercadoLibre.framework */; };
+		3D45A239264224AC00E3952F /* DetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D45A238264224AC00E3952F /* DetailsViewController.swift */; };
+		3D45A2732648C7BC00E3952F /* MercadoLibreTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D45A2722648C7BC00E3952F /* MercadoLibreTest.swift */; };
 		3D9B634C2632900C006207C7 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D9B634B2632900C006207C7 /* Constants.swift */; };
 		3DE720DE2632453400E93E5A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DE720DD2632453400E93E5A /* AppDelegate.swift */; };
 		3DE720E02632453400E93E5A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DE720DF2632453400E93E5A /* SceneDelegate.swift */; };
@@ -19,7 +21,21 @@
 		3DE720FD26324DFE00E93E5A /* ModelData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DE720FC26324DFE00E93E5A /* ModelData.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		3D45A2752648C7BC00E3952F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3DE720D22632453400E93E5A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 3DE720D92632453400E93E5A;
+			remoteInfo = MercadoLibre;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
+		3D45A238264224AC00E3952F /* DetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsViewController.swift; sourceTree = "<group>"; };
+		3D45A2702648C7BC00E3952F /* MercadoLibreTest.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MercadoLibreTest.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		3D45A2722648C7BC00E3952F /* MercadoLibreTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MercadoLibreTest.swift; sourceTree = "<group>"; };
+		3D45A2742648C7BC00E3952F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3D9B634B2632900C006207C7 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		3DE720DA2632453400E93E5A /* MercadoLibre.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MercadoLibre.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3DE720DD2632453400E93E5A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -37,6 +53,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		3D45A26D2648C7BC00E3952F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		3DE720D72632453400E93E5A /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -48,6 +71,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3D45A23A2646212400E3952F /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				3D9B634B2632900C006207C7 /* Constants.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		3D45A2712648C7BC00E3952F /* MercadoLibreTest */ = {
+			isa = PBXGroup;
+			children = (
+				3D45A2722648C7BC00E3952F /* MercadoLibreTest.swift */,
+				3D45A2742648C7BC00E3952F /* Info.plist */,
+			);
+			path = MercadoLibreTest;
+			sourceTree = "<group>";
+		};
 		3DCE2F842638E147001F572E /* Resources */ = {
 			isa = PBXGroup;
 			children = (
@@ -60,6 +100,7 @@
 			isa = PBXGroup;
 			children = (
 				3DE720DC2632453400E93E5A /* MercadoLibre */,
+				3D45A2712648C7BC00E3952F /* MercadoLibreTest */,
 				3DE720DB2632453400E93E5A /* Products */,
 				737833EE544649E5869F710E /* Pods */,
 				976AF0EB520DA18E81034B48 /* Frameworks */,
@@ -70,6 +111,7 @@
 			isa = PBXGroup;
 			children = (
 				3DE720DA2632453400E93E5A /* MercadoLibre.app */,
+				3D45A2702648C7BC00E3952F /* MercadoLibreTest.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -82,7 +124,7 @@
 				3DE720F32632493000E93E5A /* Model */,
 				3DE720FA26324D7400E93E5A /* View */,
 				3DE720F926324D6A00E93E5A /* ViewModel */,
-				3D9B634B2632900C006207C7 /* Constants.swift */,
+				3D45A23A2646212400E3952F /* Helpers */,
 				3DE720EB2632453600E93E5A /* Info.plist */,
 				3DCE2F842638E147001F572E /* Resources */,
 			);
@@ -102,6 +144,7 @@
 			children = (
 				3DE720E12632453400E93E5A /* SearchViewController.swift */,
 				3DE720F42632496600E93E5A /* ResultsViewController.swift */,
+				3D45A238264224AC00E3952F /* DetailsViewController.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -135,6 +178,24 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		3D45A26F2648C7BC00E3952F /* MercadoLibreTest */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3D45A2772648C7BC00E3952F /* Build configuration list for PBXNativeTarget "MercadoLibreTest" */;
+			buildPhases = (
+				3D45A26C2648C7BC00E3952F /* Sources */,
+				3D45A26D2648C7BC00E3952F /* Frameworks */,
+				3D45A26E2648C7BC00E3952F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				3D45A2762648C7BC00E3952F /* PBXTargetDependency */,
+			);
+			name = MercadoLibreTest;
+			productName = MercadoLibreTest;
+			productReference = 3D45A2702648C7BC00E3952F /* MercadoLibreTest.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		3DE720D92632453400E93E5A /* MercadoLibre */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 3DE720EE2632453600E93E5A /* Build configuration list for PBXNativeTarget "MercadoLibre" */;
@@ -160,9 +221,13 @@
 		3DE720D22632453400E93E5A /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 1240;
+				LastSwiftUpdateCheck = 1250;
 				LastUpgradeCheck = 1240;
 				TargetAttributes = {
+					3D45A26F2648C7BC00E3952F = {
+						CreatedOnToolsVersion = 12.5;
+						TestTargetID = 3DE720D92632453400E93E5A;
+					};
 					3DE720D92632453400E93E5A = {
 						CreatedOnToolsVersion = 12.4;
 					};
@@ -182,11 +247,19 @@
 			projectRoot = "";
 			targets = (
 				3DE720D92632453400E93E5A /* MercadoLibre */,
+				3D45A26F2648C7BC00E3952F /* MercadoLibreTest */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		3D45A26E2648C7BC00E3952F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		3DE720D82632453400E93E5A /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -242,6 +315,14 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		3D45A26C2648C7BC00E3952F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3D45A2732648C7BC00E3952F /* MercadoLibreTest.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		3DE720D62632453400E93E5A /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -250,12 +331,21 @@
 				3DE720DE2632453400E93E5A /* AppDelegate.swift in Sources */,
 				3DE720FD26324DFE00E93E5A /* ModelData.swift in Sources */,
 				3DE720E02632453400E93E5A /* SceneDelegate.swift in Sources */,
+				3D45A239264224AC00E3952F /* DetailsViewController.swift in Sources */,
 				3D9B634C2632900C006207C7 /* Constants.swift in Sources */,
 				3DE720F52632496600E93E5A /* ResultsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		3D45A2762648C7BC00E3952F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 3DE720D92632453400E93E5A /* MercadoLibre */;
+			targetProxy = 3D45A2752648C7BC00E3952F /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		3DE720E32632453400E93E5A /* Main.storyboard */ = {
@@ -277,6 +367,48 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		3D45A2782648C7BC00E3952F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = UA384SMKXM;
+				INFOPLIST_FILE = MercadoLibreTest/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.gasqui.MercadoLibreTest;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MercadoLibre.app/MercadoLibre";
+			};
+			name = Debug;
+		};
+		3D45A2792648C7BC00E3952F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = UA384SMKXM;
+				INFOPLIST_FILE = MercadoLibreTest/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.gasqui.MercadoLibreTest;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MercadoLibre.app/MercadoLibre";
+			};
+			name = Release;
+		};
 		3DE720EC2632453600E93E5A /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -436,6 +568,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		3D45A2772648C7BC00E3952F /* Build configuration list for PBXNativeTarget "MercadoLibreTest" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3D45A2782648C7BC00E3952F /* Debug */,
+				3D45A2792648C7BC00E3952F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		3DE720D52632453400E93E5A /* Build configuration list for PBXProject "MercadoLibre" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

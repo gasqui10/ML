@@ -5,7 +5,6 @@
 //  Created by Gaston Gasquet on 22/04/2021.
 //
 
-import Foundation
 
 struct ModelData: Codable {
     let query: String?
@@ -15,6 +14,22 @@ struct ModelData: Codable {
         let title: String?
         let price: Double?
         let condition: String?
-    }
+        let thumbnail: String?
+        let currencyID: String?
+        
     
+enum CodingKeys: String, CodingKey {
+    case title
+    case price
+    case condition
+    case thumbnail
+    case currencyID = "currency_id"
+        
+        }
+    }
+
 }
+
+
+
+

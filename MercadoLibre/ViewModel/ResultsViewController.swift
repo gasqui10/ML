@@ -7,16 +7,15 @@
 
 import UIKit
 
-// MARK: - DATA IS NOT LOADING INTO TABLEVIEW
 final class ResultsViewController: UIViewController {
     
     // MARK: - IBOutlets
-    @IBOutlet weak var tableView: UITableView!
+    @IBOutlet private weak var tableView: UITableView!
     
     
     // MARK: - Properties
-    var data: ModelData?
-    
+    var resultData: ModelData?
+    var selectedResult: ModelData.Results?
     
     // MARK: - Methods
     override func viewDidLoad() {
@@ -24,6 +23,15 @@ final class ResultsViewController: UIViewController {
         tableView.dataSource = self
         tableView.delegate = self
         tableView.reloadData()
+        
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == Constants.thirdStoryBoard {
+            if let destinationVC = segue.destination as? DetailsViewController {
+                destinationVC.data = selectedResult
+            }
+        }
     }
     
 }
@@ -31,22 +39,24 @@ final class ResultsViewController: UIViewController {
 // MARK: - Extensions
 extension ResultsViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        selectedResult = resultData?.results[indexPath.row]
+        performSegue(withIdentifier: Constants.thirdStoryBoard, sender: self)
         
     }
 }
 
 extension ResultsViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return data?.results.count ?? 0
+        return resultData?.results.count ?? 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: Constants.cell, for: indexPath)
-        cell.textLabel?.text = data?.results[indexPath.row].title
+        cell.textLabel?.text = resultData?.results[indexPath.row].title
         return cell
-        
         
     }
     
-    
 }
+
+

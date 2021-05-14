@@ -12,9 +12,10 @@ final class SearchViewController: UIViewController {
     
     // MARK: - IBOutlets
     @IBOutlet private weak var searchBar: UISearchBar!
+    @IBOutlet private weak var activityIndicator: UIActivityIndicatorView!
     
     // MARK: - Properties
-    var data: ModelData?
+    var searchData: ModelData?
     let url = Constants.url
     
     
@@ -23,27 +24,43 @@ final class SearchViewController: UIViewController {
         super.viewDidLoad()
         searchBar.delegate = self
         searchBar.showsCancelButton = true
+        activityIndicator.isHidden = true
     }
     
     func searchData(_ searchItem: String) {
         let urlString = url
         AF.request(urlString + searchItem, method: .get).responseDecodable(of: ModelData.self) { response in
             if let user = response.value?.results {
-                self.data = response.value
-                print(user)
+                DispatchQueue.main.async {
+                    self.searchData = response.value
+                    self.toNextView()
+                    print(user)
+                }
+                
             } else {
+                self.showAlert()
                 print(response.error!)
             }
         }
     }
     
-    func toNextView() {
+    private func toNextView() {
         let vc = (storyboard?.instantiateViewController(identifier: Constants.storyBoardIDResultsV))! as! ResultsViewController
+        activityIndicator.stopAnimating()
+        activityIndicator.hidesWhenStopped = true
         vc.modalPresentationStyle = .currentContext
-        vc.data = self.data
+        vc.resultData = self.searchData
         show(vc, sender: nil)
         
     }
+    
+    private func showAlert() {
+        let alertConnection = UIAlertController(title: "No internet connection!!", message: nil, preferredStyle: .alert)
+        alertConnection.addAction(UIAlertAction(title: "Try again", style: .default, handler: nil))
+        present(alertConnection, animated: true, completion: nil)
+        
+    }
+    
 }
 
 // MARK: - Extensions
@@ -51,10 +68,11 @@ extension SearchViewController: UISearchBarDelegate {
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         searchBar.showsCancelButton = false
         if let search = searchBar.text {
-            searchData(search)
-            toNextView()
+            searchData(search.addingPercentEncoding(withAllowedCharacters: .afURLQueryAllowed)!)
+            self.activityIndicator.isHidden = false
+            self.activityIndicator.startAnimating()
         } else {
-            print("No item found")
+            return
         }
         
     }
